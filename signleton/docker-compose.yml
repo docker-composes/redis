@@ -1,0 +1,15 @@
+version: '2.2'
+services:
+  redis-singleton:
+    image: redis:5.0.6
+    container_name: redis-singleton
+    volumes:
+      - ./data:/data
+    ports:
+      - 6379:6379
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    external: true
